@@ -11,6 +11,10 @@ const style = {
 };
 
 //JSX
+//この部分はhooks登場以前はクラスコンポーネントが使用されていたため
+//"render"によるエレメントを使った表記が主流だった
+//なので今の案件ではクラスコンポーネントが多用されているため
+//下記のような描き方はされていない
 export const InputTodo = (props) => {
   const { todoText, onChange, onClick, disabled } = props;
   return (

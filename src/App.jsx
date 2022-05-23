@@ -60,7 +60,8 @@ export const App = () => {
     setCompleteTodos(newCompleteTodos);
   };
 
-  //JSXにあたる部分をコンポーネント化
+  //JSXにあたる部分を作成したコンポーネントを用いて表記
+  //ここでは
   return (
     <>
       <InputTodo

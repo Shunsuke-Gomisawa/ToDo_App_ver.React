@@ -1,5 +1,6 @@
 import React from "react";
 
+//関数コンポーネントである
 export const CompleteTodos = (props) => {
   const { todos, onClickReturn } = props;
   return (
