@@ -31,6 +31,7 @@ export const App = () => {
 
   //削除ボタンの機能実装
   const onClickDelete = (index) => {
+    //newTodosという配列を準備
     const newTodos = [...incompleteTodos];
     newTodos.splice(index, 1);
     setIncompleteTodos(newTodos);
@@ -61,9 +62,9 @@ export const App = () => {
   };
 
   //JSXにあたる部分を作成したコンポーネントを用いて表記
-  //ここでは
   return (
     <>
+      {/* ↓　一番上の入力フォーム */}
       <InputTodo
         todoText={todoText}
         onChange={onChangeTodoText}
@@ -76,12 +77,14 @@ export const App = () => {
         </p>
       )}
 
+      {/* ↓　二番目の未完了のToDoの部分 */}
       <IncompleteTodos
         todos={incompleteTodos}
         onClickComplete={onClickComplete}
         onClickDelete={onClickDelete}
       />
 
+      {/* ↓　三番目の完了したToDoの部分 */}
       <CompleteTodos todos={completeTodos} onClickReturn={onClickReturn} />
     </>
   );
