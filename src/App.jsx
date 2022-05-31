@@ -6,6 +6,8 @@ import { CompleteTodos } from "./components/CompleteTodos";
 
 export const App = () => {
   //入力プラットフォームに関するstate配列を宣言
+  //第一引数(todoText)    =Stateの名前
+  //第二引数(setTodoText) =Stateの更新関数
   const [todoText, setTodoText] = useState("");
 
   //未完了のTODO要素を格納するstate配列を宣言
@@ -22,10 +24,12 @@ export const App = () => {
 
   //追加ボタンの機能実装
   const onClickAdd = () => {
+    //何も入力されてないのに追加ボタンが押された場合
     if (todoText === "") return;
     //未完了のTodoに代入するための配列
     const newTodos = [...incompleteTodos, todoText];
     setIncompleteTodos(newTodos);
+    //処理完了後テキストボックスの中身をカラにする
     setTodoText("");
   };
 

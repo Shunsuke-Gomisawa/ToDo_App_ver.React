@@ -23,7 +23,9 @@ export const InputTodo = (props) => {
       <input
         disabled={disabled}
         placeholder="TODOを入力"
+        //state(todoText)を入力された文字列(Value)とする
         value={todoText}
+        //入力された文字列を実際に更新する
         onChange={onChange}
       />
       <button disabled={disabled} onClick={onClick}>
