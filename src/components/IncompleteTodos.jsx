@@ -1,7 +1,9 @@
 import React from "react";
 
 export const IncompleteTodos = (props) => {
+  //分割代入
   const { todos, onClickComplete, onClickDelete } = props;
+
   return (
     <div className="incomplete-area ">
       <p className="tittle">未完了のTODO</p>

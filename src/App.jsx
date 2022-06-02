@@ -11,6 +11,8 @@ export const App = () => {
   const [todoText, setTodoText] = useState("");
 
   //未完了のTODO要素を格納するstate配列を宣言
+  //やってることは分割代入！！
+  //第二引数である"setIncompleteTodos"は更新関数！
   const [incompleteTodos, setIncompleteTodos] = useState([]);
 
   //完了したTODO要素を格納するstate配列を宣言
@@ -26,8 +28,10 @@ export const App = () => {
   const onClickAdd = () => {
     //何も入力されてないのに追加ボタンが押された場合
     if (todoText === "") return;
+
     //未完了のTodoに代入するための配列
     const newTodos = [...incompleteTodos, todoText];
+    //ここで「incompleteTodosというState」にnewTodosを代入した
     setIncompleteTodos(newTodos);
     //処理完了後テキストボックスの中身をカラにする
     setTodoText("");
@@ -75,6 +79,7 @@ export const App = () => {
         onClick={onClickAdd}
         disabled={incompleteTodos.length >= 5}
       />
+      {/* 一瞬JacaScriptで書くので波カッコ登場 */}
       {incompleteTodos.length >= 5 && (
         <p style={{ color: "red" }}>
           登録できるToDo5個までです。消化してください。
